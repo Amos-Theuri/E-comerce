@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Shop</title>
+  </head>
+  <body class="dark-mode">
+    <section id="header">
+      <a href="#"><img src="Imports/" alt="logo" class="logo" /> </a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="contact.html">contact</a></li>
+          <div class="dropdown">
+            <button class="dropbtn">Branches</button>
+            <div class="dropdown-content">
+              <a href="#">Nairobi</a>
+              <a href="#">Mombasa</a>
+              <a href="#">Nakuru</a>
+            </div>
+          </div>
+          <li>
+            <i
+              id="darkmode"
+              class="ri-contrast-2-fill"
+              onclick="myFunction()"
+            ></i>
+          </li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="ri-shopping-bag-fill"></i></a>
+          </li>
+          <a href="#" id="close"><i class="ri-close-fill"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="ri-shopping-bag-fill"></i></a>
+        <li><i class="ri-contrast-2-fill" onclick="myFunction()"></i></li>
+        <i id="bar" class="ri-menu-line"></i>
+      </div>
+    </section>
+
+    <section
+      id="page-header"
+      class="about-header"
+      style="background-image: url(Imports/about/banner.png)"
+    >
+      <h2>Get To Know Us</h2>
+
+      <p>All our info</p>
+    </section>
+
+    <section id="about-head" class="section-p1">
+      <img src="Imports/about/a6.jpg" alt="" />
+      <div>
+        <h2>Who are we?</h2>
+        <p>
+          we are venoom!!! But we also make you look good when going out on a
+          dateg with that person who you think is your soulmate but will
+          ultimmately break your heart
+        </p>
+        <abbr title=""
+          >Shop amzing products from our sites and pick them up at our stations
+          all around the country</abbr
+        >
+        <br /><br />
+        <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">
+          Shop affordable Merch with us and save big</marquee
+        >
+      </div>
+    </section>
+
+    <section id="about-app" class="section-p1">
+      <h1>Download our <a href="#">App</a></h1>
+      <div class="video">
+        <video autoplay muted loop src="Imports/about/1.mp4"></video>
+      </div>
+    </section>
+
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="Imports/feature/fe1.png" alt="fe1" />
+        <h6>Free shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Imports/feature/fe2.png" alt="fe1" />
+        <h6>Make an order</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Imports/feature/fe3.png" alt="fe1" />
+        <h6>Discounts</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Imports/feature/fe4.png" alt="fe1" />
+        <h6>Coupons</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Imports/feature/fe5.png" alt="fe1" />
+        <h6>Flash sale</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Imports/feature/fe6.png" alt="fe1" />
+        <h6>Help</h6>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign-up for newsletter</h4>
+        <p>Get updated on our <span>latest offers</span></p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="email address" />
+        <button class="normal">SIGN UP</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="" alt="logo" />
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> Nairobi, Kenya</p>
+        <p><strong>Phone:</strong> +254 72345678, +254 71234567</p>
+        <p><strong>Hours:</strong> Mon-Fri: 8am-6pm, Sat-Sun: 10am-5pm</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class="ri-twitter-fill"></i>
+            <i class="ri-instagram-fill"></i>
+            <i class="ri-youtube-fill"></i>
+            <i class="ri-facebook-circle-fill"></i>
+            <i class="ri-pinterest-fill"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Terms& Conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>Install from playstore or Appstore</p>
+        <div class="row">
+          <img src="Imports/footer/gplay.png" alt="playstore" />
+          <img src="Imports/footer/appstore.png" alt="appstore" />
+        </div>
+        <p>Make Payments</p>
+        <img src="Imports/footer/pay.png" alt="payment" />
+      </div>
+
+      <div class="copyright">
+        <i class="ri-copyright-line">2023, Amos Theuri, E-commerce</i>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
