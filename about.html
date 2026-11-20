@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -12,10 +12,10 @@
     <title>Shop</title>
   </head>
   <body class="dark-mode">
-    <section id="header">
-      <a href="#"><img src="Imports/" alt="logo" class="logo" /> </a>
+    <header id="header">
+      <a href="index.html"><img src="assets/Bonprix-Logo-500x281.png" alt="logo" class="logo" /></a>
 
-      <div>
+      <nav>
         <ul id="navbar">
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
@@ -42,18 +42,20 @@
           </li>
           <a href="#" id="close"><i class="ri-close-fill"></i></a>
         </ul>
-      </div>
+      </nav>
       <div id="mobile">
         <a href="cart.html"><i class="ri-shopping-bag-fill"></i></a>
-        <li><i class="ri-contrast-2-fill" onclick="myFunction()"></i></li>
+        <i class="ri-contrast-2-fill" onclick="myFunction()"></i>
         <i id="bar" class="ri-menu-line"></i>
       </div>
-    </section>
+    </header>
+
+    <main id="main">
 
     <section
       id="page-header"
       class="about-header"
-      style="background-image: url(Imports/about/banner.png)"
+      style="background-image: url(assets/about/banner.png)"
     >
       <h2>Get To Know Us</h2>
 
@@ -61,7 +63,7 @@
     </section>
 
     <section id="about-head" class="section-p1">
-      <img src="Imports/about/a6.jpg" alt="" />
+      <img src="assets/about/a6.jpg" alt="" />
       <div>
         <h2>Who are we?</h2>
         <p>
@@ -83,33 +85,33 @@
     <section id="about-app" class="section-p1">
       <h1>Download our <a href="#">App</a></h1>
       <div class="video">
-        <video autoplay muted loop src="Imports/about/1.mp4"></video>
+        <video autoplay muted loop src="assets/about/1.mp4"></video>
       </div>
     </section>
 
     <section id="feature" class="section-p1">
       <div class="fe-box">
-        <img src="Imports/feature/fe1.png" alt="fe1" />
+        <img src="assets/feature/fe1.png" alt="fe1" />
         <h6>Free shipping</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe2.png" alt="fe1" />
+        <img src="assets/feature/fe2.png" alt="fe1" />
         <h6>Make an order</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe3.png" alt="fe1" />
+        <img src="assets/feature/fe3.png" alt="fe1" />
         <h6>Discounts</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe4.png" alt="fe1" />
+        <img src="assets/feature/fe4.png" alt="fe1" />
         <h6>Coupons</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe5.png" alt="fe1" />
+        <img src="assets/feature/fe5.png" alt="fe1" />
         <h6>Flash sale</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe6.png" alt="fe1" />
+        <img src="assets/feature/fe6.png" alt="fe1" />
         <h6>Help</h6>
       </div>
     </section>
@@ -125,9 +127,11 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="section-p1">
       <div class="col">
-        <img class="logo" src="" alt="logo" />
+        <img class="logo" src="assets/Bonprix-Logo-500x281.png" alt="logo" />
         <h4>Contact</h4>
         <p><strong>Address:</strong> Nairobi, Kenya</p>
         <p><strong>Phone:</strong> +254 72345678, +254 71234567</p>
@@ -164,11 +168,11 @@
         <h4>Install App</h4>
         <p>Install from playstore or Appstore</p>
         <div class="row">
-          <img src="Imports/footer/gplay.png" alt="playstore" />
-          <img src="Imports/footer/appstore.png" alt="appstore" />
+          <img src="assets/footer/gplay.png" alt="playstore" />
+          <img src="assets/footer/appstore.png" alt="appstore" />
         </div>
         <p>Make Payments</p>
-        <img src="Imports/footer/pay.png" alt="payment" />
+        <img src="assets/footer/pay.png" alt="payment" />
       </div>
 
       <div class="copyright">
@@ -176,6 +180,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -12,10 +12,10 @@
     <title>Shop</title>
   </head>
   <body class="dark-mode">
-    <section id="header">
-      <a href="#"><img src="Imports/" alt="logo" class="logo" /> </a>
+    <header id="header">
+      <a href="index.html"><img src="assets/Bonprix-Logo-500x281.png" alt="logo" class="logo" /></a>
 
-      <div>
+      <nav>
         <ul id="navbar">
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="shop.html">Shop</a></li>
@@ -42,13 +42,15 @@
           </li>
           <a href="#" id="close"><i class="ri-close-fill"></i></a>
         </ul>
-      </div>
+      </nav>
       <div id="mobile">
         <a href="cart.html"><i class="ri-shopping-bag-fill"></i></a>
-        <li><i class="ri-contrast-2-fill" onclick="myFunction()"></i></li>
+        <i class="ri-contrast-2-fill" onclick="myFunction()"></i>
         <i id="bar" class="ri-menu-line"></i>
       </div>
-    </section>
+    </header>
+
+    <main id="main">
 
     <section id="hero">
       <h4>Trade-in-offer</h4>
@@ -60,27 +62,27 @@
 
     <section id="feature" class="section-p1">
       <div class="fe-box">
-        <img src="Imports/feature/fe1.png" alt="fe1" />
+        <img src="assets/feature/fe1.png" alt="fe1" />
         <h6>Free shipping</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe2.png" alt="fe1" />
+        <img src="assets/feature/fe2.png" alt="fe1" />
         <h6>Make an order</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe3.png" alt="fe1" />
+        <img src="assets/feature/fe3.png" alt="fe1" />
         <h6>Discounts</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe4.png" alt="fe1" />
+        <img src="assets/feature/fe4.png" alt="fe1" />
         <h6>Coupons</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe5.png" alt="fe1" />
+        <img src="assets/feature/fe5.png" alt="fe1" />
         <h6>Flash sale</h6>
       </div>
       <div class="fe-box">
-        <img src="Imports/feature/fe6.png" alt="fe1" />
+        <img src="assets/feature/fe6.png" alt="fe1" />
         <h6>Help</h6>
       </div>
     </section>
@@ -90,7 +92,7 @@
       <p>cold weather collection</p>
       <div class="pro-container">
         <div class="pro">
-          <img src="Imports/products/nikej.png" alt="jacket" />
+          <img src="assets/products/nikej.png" alt="jacket" />
           <div class="des">
             <span>Nike</span>
             <h5>Nike Black&white Jacket</h5>
@@ -106,7 +108,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/adidash.png" alt="hoodie" />
+          <img src="assets/products/adidash.png" alt="hoodie" />
           <div class="des">
             <span>Adidas</span>
             <h5>Adidas Adjustable Hoodie</h5>
@@ -122,7 +124,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/Truspecbala.png" alt="Balaclava" />
+          <img src="assets/products/Truspecbala.png" alt="Balaclava" />
           <div class="des">
             <span>Tru-Spec</span>
             <h5>Tru-Spec Balaclava</h5>
@@ -138,7 +140,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/kappaf.png" alt="furcoat" />
+          <img src="assets/products/kappaf.png" alt="furcoat" />
           <div class="des">
             <span>Kappa</span>
             <h5>Kappa soft Ladies Fur-Coat</h5>
@@ -154,7 +156,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/genericbeanie.png" alt="beanie" />
+          <img src="assets/products/genericbeanie.png" alt="beanie" />
           <div class="des">
             <span>Generic</span>
             <h5>Generic Beanie</h5>
@@ -170,7 +172,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/pumah.png" alt="hoodie" />
+          <img src="assets/products/pumah.png" alt="hoodie" />
           <div class="des">
             <span>Puma</span>
             <h5>Puma Zipped Hoodie</h5>
@@ -186,7 +188,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/thenorthfacej.png" alt="jacket" />
+          <img src="assets/products/thenorthfacej.png" alt="jacket" />
           <div class="des">
             <span>TheNorthFace</span>
             <h5>TheNorthFace Zipper Jacket</h5>
@@ -202,7 +204,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/genericsocks.png" alt="socks" />
+          <img src="assets/products/genericsocks.png" alt="socks" />
           <div class="des">
             <span>Generic</span>
             <h5>Socks</h5>
@@ -231,7 +233,7 @@
       <p>cold weather collection</p>
       <div class="pro-container">
         <div class="pro">
-          <img src="Imports/products/newarrcargop.avif" alt="cargopants" />
+          <img src="assets/products/newarrcargop.avif" alt="cargopants" />
           <div class="des">
             <span>Nike</span>
             <h5>Cargo Pants</h5>
@@ -247,7 +249,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f2.jpg" alt="hoodie" />
+          <img src="assets/products/f2.jpg" alt="hoodie" />
           <div class="des">
             <span>Adidas</span>
             <h5>Adidas Adjustable Hoodie</h5>
@@ -263,7 +265,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f3.jpg" alt="Balaclava" />
+          <img src="assets/products/f3.jpg" alt="Balaclava" />
           <div class="des">
             <span>Tru-Spec</span>
             <h5>Tru-Spec Balaclava</h5>
@@ -279,7 +281,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f8.jpg" alt="furcoat" />
+          <img src="assets/products/f8.jpg" alt="furcoat" />
           <div class="des">
             <span>Kappa</span>
             <h5>Kappa soft Ladies Fur-Coat</h5>
@@ -295,7 +297,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f4.jpg" alt="beanie" />
+          <img src="assets/products/f4.jpg" alt="beanie" />
           <div class="des">
             <span>Generic</span>
             <h5>Generic Beanie</h5>
@@ -311,7 +313,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f5.jpg" alt="hoodie" />
+          <img src="assets/products/f5.jpg" alt="hoodie" />
           <div class="des">
             <span>Puma</span>
             <h5>Puma Zipped Hoodie</h5>
@@ -327,7 +329,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f6.jpg" alt="jacket" />
+          <img src="assets/products/f6.jpg" alt="jacket" />
           <div class="des">
             <span>TheNorthFace</span>
             <h5>TheNorthFace Zipper Jacket</h5>
@@ -343,7 +345,7 @@
           <a href="#"><i class="ri-shopping-cart-line cart"></i></a>
         </div>
         <div class="pro">
-          <img src="Imports/products/f7.jpg" alt="socks" />
+          <img src="assets/products/f7.jpg" alt="socks" />
           <div class="des">
             <span>Generic</span>
             <h5>Socks</h5>
@@ -402,9 +404,11 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="section-p1">
       <div class="col">
-        <img class="logo" src="" alt="logo" />
+        <img class="logo" src="assets/Bonprix-Logo-500x281.png" alt="logo" />
         <h4>Contact</h4>
         <p><strong>Address:</strong> Nairobi, Kenya</p>
         <p><strong>Phone:</strong> +254 72345678, +254 71234567</p>
@@ -441,11 +445,11 @@
         <h4>Install App</h4>
         <p>Install from playstore or Appstore</p>
         <div class="row">
-          <img src="Imports/footer/gplay.png" alt="playstore" />
-          <img src="Imports/footer/appstore.png" alt="appstore" />
+          <img src="assets/footer/gplay.png" alt="playstore" />
+          <img src="assets/footer/appstore.png" alt="appstore" />
         </div>
         <p>Make Payments</p>
-        <img src="Imports/footer/pay.png" alt="payment" />
+        <img src="assets/footer/pay.png" alt="payment" />
       </div>
 
       <div class="copyright">
@@ -453,6 +457,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

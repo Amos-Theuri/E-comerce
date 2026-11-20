@@ -94,6 +94,12 @@ body {
   left: 0;
 }
 
+.logo {
+  max-height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
 #navbar {
   display: flex;
   align-items: center;
@@ -206,7 +212,7 @@ body {
 
 /*Home page*/
 #hero {
-  background-image: url(Imports/1245269.png);
+  background-image: url(../assets/1245269.png);
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -236,7 +242,7 @@ body {
 }
 
 #hero button {
-  background-image: url(Imports/button.png);
+  background-image: url(../assets/button.png);
   background-color: transparent;
   color: aquamarine;
   border: 0;
@@ -379,7 +385,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(Imports/banner.avif);
+  background-image: url(../assets/banner.avif);
   width: 100%;
   height: 40vh;
   background-size: cover;
@@ -417,7 +423,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url(Imports/smbanner.avif);
+  background-image: url(../assets/smbanner.avif);
   min-width: 48%;
   height: 50vh;
   background-size: cover;
@@ -426,7 +432,7 @@ body {
 }
 
 #sm-banner .banner-box2 {
-  background-image: url(Imports/smbanner2.avif);
+  background-image: url(../assets/smbanner2.avif);
 }
 
 #sm-banner h4 {
@@ -465,7 +471,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url(Imports/banner3.avif);
+  background-image: url(../assets/banner3.avif);
   min-width: 30%;
   height: 30vh;
   background-size: cover;
@@ -475,11 +481,11 @@ body {
 }
 
 #banner3 .bnx2 {
-  background-image: url(Imports/bnx2.avif);
+  background-image: url(../assets/bnx2.avif);
 }
 
 #banner3 .bnx3 {
-  background-image: url(Imports/bnx3.avif);
+  background-image: url(../assets/bnx3.avif);
 }
 
 #banner3 h2 {
@@ -705,7 +711,7 @@ footer .copyright {
 
 /* blog page*/
 #page-header .blog-header {
-  background-image: url(Imports/banner/b19.jpg);
+  background-image: url(../assets/banner/b19.jpg);
   color: #041e42;
 }
 
@@ -775,7 +781,7 @@ footer .copyright {
 
 /* about page*/
 #page-header .about-header {
-  background-image: url(Imports/about/banner.png);
+  background-image: url(../assets/about/banner.png);
 }
 
 #about-head {
