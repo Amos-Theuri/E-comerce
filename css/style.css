@@ -1,3 +1,44 @@
+:root {
+  --bg-body: #ffffff;
+  --bg-header: #e3e6f3;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f8f9fa;
+  --text-main: #1a1a1a;
+  --text-heading: #222222;
+  --text-muted: #465b52;
+  --text-light: #606063;
+  --border-color: #e2e8f0;
+  --card-border: #cce7d0;
+  --card-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  --input-bg: #ffffff;
+  --input-border: #e1e1e1;
+  --dropdown-bg: #f1f1f1;
+  --accent: #088178;
+  --accent-hover: #06665f;
+  --accent-light: #d3f8d9;
+}
+
+[data-theme="dark"],
+body.dark-mode {
+  --bg-body: #0f172a;
+  --bg-header: #1e293b;
+  --bg-surface: #1e293b;
+  --bg-subtle: #182234;
+  --text-main: #f1f5f9;
+  --text-heading: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #cbd5e1;
+  --border-color: #334155;
+  --card-border: #334155;
+  --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  --dropdown-bg: #1e293b;
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
+  --accent-light: rgba(20, 184, 166, 0.2);
+}
+
 @import url("https://fonts.googleapis.com/css2?family=spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -7,21 +48,28 @@
   font-family: "spartan", sans-serif;
 }
 
+body {
+  width: 100%;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 h1 {
   font-size: 50px;
   line-height: 64px;
-  color: #222;
+  color: var(--text-heading);
 }
 
 h2 {
   font-size: 46px;
   line-height: 54px;
-  color: #222;
+  color: var(--text-heading);
 }
 
 h4 {
   font-size: 20px;
-  color: #222;
+  color: var(--text-heading);
 }
 
 h6 {
@@ -31,7 +79,7 @@ h6 {
 
 p {
   font-size: 16px;
-  color: #465b52;
+  color: var(--text-muted);
 }
 
 .section-p1 {
@@ -67,15 +115,6 @@ button.white {
   transition: 0.2s;
 }
 
-body {
-  width: 100%;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
 .star-fill {
   fill: #fcef3b;
 }
@@ -86,18 +125,25 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background-color: #e3e6f3;
+  background-color: var(--bg-header);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   z-index: 999;
   position: sticky;
   top: 0;
   left: 0;
+  transition: background-color 0.3s ease;
 }
 
 .logo {
   max-height: 45px;
   width: auto;
   object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .logo,
+body.dark-mode .logo {
+  filter: brightness(0) invert(1);
 }
 
 #navbar {
@@ -116,7 +162,7 @@ body {
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-main);
   transition: 0.3s ease;
 }
 
@@ -140,13 +186,24 @@ body {
   left: 20px;
 }
 
-#darkmode {
+#darkmode,
+.theme-toggle {
   margin: 0;
-  font-size: 25px;
-  padding: 2px 2px;
-  background-color: #088178;
+  font-size: 22px;
   cursor: pointer;
-  border-radius: 4px;
+  color: var(--text-main);
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#darkmode:hover,
+.theme-toggle:hover {
+  color: var(--accent);
+  transform: rotate(15deg);
 }
 
 /* Dropdown Button */
@@ -172,15 +229,17 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--dropdown-bg);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: var(--text-main);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -188,7 +247,8 @@ body {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: var(--bg-subtle);
+  color: var(--accent);
 }
 
 /* Show the dropdown menu on hover */
@@ -264,10 +324,12 @@ body {
   width: 180px;
   text-align: center;
   padding: 25px 15px;
-  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.3);
-  border: 1px solid #cce7d0;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  background-color: var(--bg-surface);
   border-radius: 4px;
   margin: 15px 0;
+  transition: 0.3s ease;
 }
 
 #feature .fe-box:hover {
@@ -319,10 +381,11 @@ body {
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
-  border: 1px solid #cce7d0;
+  border: 1px solid var(--card-border);
+  background-color: var(--bg-surface);
   border-radius: 25px;
   cursor: pointer;
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--card-shadow);
   margin: 15px 0;
   transition: 0.2s ease;
   position: relative;
@@ -343,13 +406,13 @@ body {
 }
 
 #product1 .pro .des span {
-  color: #606063;
+  color: var(--text-light);
   font-size: 12px;
 }
 
 #product1 .pro .des h5 {
   padding-top: 7px;
-  color: #1a1a1a;
+  color: var(--text-main);
   font-size: 14px;
 }
 
@@ -370,10 +433,10 @@ body {
   height: 40px;
   line-height: 40px;
   border-radius: 50px;
-  background-color: #d3f8d9;
+  background-color: var(--accent-light);
   font-weight: 500;
-  color: #6deee5;
-  border: 1px solid #cce7d0;
+  color: var(--accent);
+  border: 1px solid var(--card-border);
   position: absolute;
   bottom: 20px;
   right: 10px;
@@ -580,11 +643,35 @@ footer p {
   margin: 0 0 8px 0;
 }
 
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+}
+
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+  color: var(--text-heading);
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  color: var(--text-muted);
+}
+
 footer a {
   font-size: 14px;
   text-decoration: none;
-  color: #222;
+  color: var(--text-muted);
   margin-bottom: 10px;
+  transition: 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--accent);
 }
 
 footer .follow {
@@ -592,14 +679,21 @@ footer .follow {
 }
 
 footer .follow i {
-  color: #465b52;
+  color: var(--text-muted);
   padding-right: 4px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
-footer .follow i:hover,
-footer a:hover {
-  color: #088178;
+footer .follow i:hover {
+  color: var(--accent);
+}
+
+footer .copyright {
+  width: 100%;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 11px;
 }
 
 footer .install .row img {
@@ -689,8 +783,12 @@ footer .copyright {
 
 #prodetails .sinle-pro-details select {
   display: block;
-  padding: 5px 10px;
+  padding: 8px 12px;
   margin-bottom: 10px;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
 }
 
 #prodetails .sinle-pro-details input {
@@ -699,6 +797,10 @@ footer .copyright {
   padding-left: 10px;
   font-size: 16px;
   margin-right: 10px;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
 }
 
 #prodetails .sinle-pro-details input:focus {
@@ -745,7 +847,7 @@ footer .copyright {
 #blog .blog-details a {
   text-decoration: none;
   font-size: 12px;
-  color: #000;
+  color: var(--text-main);
   font-weight: 700;
   position: relative;
   transition: 0.3s;
@@ -755,7 +857,7 @@ footer .copyright {
   content: "";
   width: 50px;
   height: 1px;
-  background-color: #000;
+  background-color: var(--text-main);
   position: absolute;
   top: 4px;
   right: -60px;
@@ -775,7 +877,7 @@ footer .copyright {
   left: 0;
   font-size: 70px;
   font-weight: 700;
-  color: #c9cbce;
+  color: var(--border-color);
   z-index: -9;
 }
 
@@ -874,7 +976,9 @@ footer .copyright {
   justify-content: space-between;
   margin: 30px;
   padding: 80px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  border-radius: 8px;
 }
 
 #form-details form {
@@ -890,7 +994,10 @@ footer .copyright {
   padding: 12px 15px;
   outline: none;
   margin-bottom: 20px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border-radius: 4px;
 }
 
 #form-details .people div {
@@ -916,7 +1023,7 @@ footer .copyright {
   display: block;
   font-size: 16px;
   font-weight: 600;
-  color: #000;
+  color: var(--text-heading);
 }
 
 /* Cart apge*/
@@ -957,12 +1064,17 @@ footer .copyright {
 #cart table td:nth-child(5) input {
   width: 70px;
   padding: 10px 5px 10px 15px;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
 }
 
 #cart table thead {
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--border-color);
   border-left: none;
   border-right: none;
+  color: var(--text-heading);
 }
 
 #cart table thead td {
@@ -1001,7 +1113,10 @@ footer .copyright {
   outline: none;
   width: 60%;
   margin-right: 10px;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border-radius: 4px;
 }
 
 #coupon button,
@@ -1012,8 +1127,10 @@ footer .copyright {
 #subtotal {
   width: 50%;
   margin-bottom: 30px;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--border-color);
   padding: 30px;
+  background-color: var(--bg-surface);
+  border-radius: 4px;
 }
 
 #subtotal table {
@@ -1024,9 +1141,10 @@ footer .copyright {
 
 #subtotal table td {
   width: 50%;
-  border: 1px solid #e2e9e1;
+  border: 1px solid var(--border-color);
   padding: 10px;
   font-size: 13px;
+  color: var(--text-main);
 }
 
 /* media query*/
@@ -1045,7 +1163,7 @@ footer .copyright {
     right: -300px;
     height: 100vh;
     width: 300px;
-    background-color: #e3e6f3;
+    background-color: var(--bg-header);
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
     padding: 80px 0 0 10px;
     transition: 0.3s;
@@ -1063,7 +1181,7 @@ footer .copyright {
   }
 
   #mobile i {
-    color: #1a1a1a;
+    color: var(--text-main);
     font-size: 24px;
     padding-left: 20px;
   }
@@ -1072,7 +1190,7 @@ footer .copyright {
     position: absolute;
     top: 30px;
     left: 30px;
-    color: #222;
+    color: var(--text-main);
     font-size: 24px;
     display: initial;
   }

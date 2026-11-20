@@ -10,8 +10,16 @@
       rel="stylesheet"
     />
     <title>Shop</title>
+      <script>
+      (function () {
+        var savedTheme = localStorage.getItem("storefront_theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
-  <body class="dark-mode">
+  <body>
     <header id="header">
       <a href="index.html"><img src="assets/Bonprix-Logo-500x281.png" alt="logo" class="logo" /></a>
 
@@ -33,8 +41,9 @@
           <li>
             <i
               id="darkmode"
-              class="ri-contrast-2-fill"
-              onclick="myFunction()"
+              class="theme-toggle ri-moon-line"
+              title="Toggle theme"
+              aria-label="Toggle theme"
             ></i>
           </li>
           <li id="lg-bag">
@@ -45,7 +54,12 @@
       </nav>
       <div id="mobile">
         <a href="pages/cart.html"><i class="ri-shopping-bag-fill"></i></a>
-        <i class="ri-contrast-2-fill" onclick="myFunction()"></i>
+        <i
+          id="darkmode-mobile"
+          class="theme-toggle ri-moon-line"
+          title="Toggle theme"
+          aria-label="Toggle theme"
+        ></i>
         <i id="bar" class="ri-menu-line"></i>
       </div>
     </header>
