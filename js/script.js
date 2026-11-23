@@ -372,9 +372,9 @@ function initCartPage() {
       return;
     }
 
-    if (cartTable) cartTable.style.display = "table";
+    if (cartTable) cartTable.style.display = "";
     if (emptyState) emptyState.style.display = "none";
-    if (cartAddSection) cartAddSection.style.display = "flex";
+    if (cartAddSection) cartAddSection.style.display = "";
 
     cartItems.innerHTML = cart
       .map((item) => {
