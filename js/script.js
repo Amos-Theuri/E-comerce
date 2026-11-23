@@ -394,7 +394,7 @@ function initCartPage() {
             </td>
             <td>$${item.price.toFixed(2)}</td>
             <td>
-              <input type="number" min="1" max="99" value="${item.quantity}" data-id="${item.id}" class="cart-qty-input" />
+              <input type="number" min="1" max="99" inputmode="numeric" value="${item.quantity}" data-id="${item.id}" class="cart-qty-input" />
             </td>
             <td><strong>$${itemSubtotal.toFixed(2)}</strong></td>
           </tr>
