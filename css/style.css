@@ -1311,17 +1311,25 @@ footer .copyright {
   margin-bottom: 20px;
 }
 
+#cart table td.cart-col-remove .remove-text,
+.remove-text {
+  display: none;
+}
+
 #cart table td a.remove-btn {
   color: #ef4444;
   font-size: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 #cart table td a.remove-btn:hover {
   color: #dc2626;
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .coupon-message {
@@ -1510,10 +1518,11 @@ footer .copyright {
   #cart-table tbody tr {
     display: grid;
     grid-template-columns: 75px 1fr auto;
-    grid-template-rows: auto auto;
     grid-template-areas:
-      "img info remove"
-      "img actions subtotal";
+      "img product product"
+      "img price price"
+      "img qty subtotal"
+      "remove remove remove";
     gap: 8px 12px;
     align-items: center;
     background-color: var(--bg-surface);
@@ -1534,23 +1543,14 @@ footer .copyright {
     box-sizing: border-box;
   }
 
-  #cart-table td:nth-child(1) {
-    grid-area: remove;
-    text-align: right;
-    width: auto;
-  }
-
-  #cart-table td a.remove-btn {
-    font-size: 22px;
-    padding: 4px;
-    color: #ef4444;
-  }
-
+  #cart-table td.cart-col-image,
   #cart-table td:nth-child(2) {
     grid-area: img;
     width: 75px;
+    align-self: flex-start;
   }
 
+  #cart-table td.cart-col-image img,
   #cart-table img {
     width: 75px;
     height: 75px;
@@ -1559,34 +1559,75 @@ footer .copyright {
     display: block;
   }
 
+  #cart-table td.cart-col-product,
   #cart-table td:nth-child(3) {
-    grid-area: info;
+    grid-area: product;
     width: auto;
     font-size: 14px;
     line-height: 1.35;
     padding-right: 6px;
   }
 
+  #cart-table td.cart-col-product strong,
   #cart-table td:nth-child(3) strong {
     display: block;
     color: var(--text-heading);
     word-break: break-word;
+    overflow-wrap: break-word;
   }
 
+  #cart-table td.cart-col-product .cart-item-size {
+    display: block;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  #cart-table td.cart-col-price,
   #cart-table td:nth-child(4) {
-    display: none;
-  }
-
-  #cart-table td:nth-child(5) {
-    grid-area: actions;
+    grid-area: price;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-heading);
     width: auto;
   }
 
+  #cart-table td.cart-col-price::before,
+  #cart-table td:nth-child(4)::before {
+    content: "Price: ";
+    display: inline;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  #cart-table td.cart-col-quantity,
+  #cart-table td:nth-child(5) {
+    grid-area: qty;
+    display: flex;
+    align-items: center;
+    width: auto;
+  }
+
+  #cart-table td.cart-col-quantity::before,
+  #cart-table td:nth-child(5)::before {
+    content: "Qty: ";
+    display: inline;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  #cart-table td.cart-col-quantity input,
   #cart-table td:nth-child(5) input {
-    width: 60px;
-    height: 36px;
-    padding: 4px 8px;
-    font-size: 16px;
+    width: 55px;
+    height: 34px;
+    padding: 4px 6px;
+    font-size: 15px;
     border: 1px solid var(--input-border);
     border-radius: 4px;
     background-color: var(--input-bg);
@@ -1594,13 +1635,67 @@ footer .copyright {
     text-align: center;
   }
 
+  #cart-table td.cart-col-subtotal,
   #cart-table td:nth-child(6) {
     grid-area: subtotal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     text-align: right;
     font-size: 15px;
     font-weight: 700;
     color: var(--accent);
     width: auto;
+  }
+
+  #cart-table td.cart-col-subtotal::before,
+  #cart-table td:nth-child(6)::before {
+    content: "Subtotal: ";
+    display: inline;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  #cart-table td.cart-col-remove,
+  #cart-table td:nth-child(1) {
+    grid-area: remove;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+    margin-top: 4px;
+  }
+
+  #cart-table td.cart-col-remove .remove-text,
+  #cart-table .remove-text {
+    display: inline !important;
+  }
+
+  #cart-table td a.remove-btn,
+  #cart table td a.remove-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  #cart-table td a.remove-btn:hover,
+  #cart-table td a.remove-btn:active {
+    background-color: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
   }
 
   #cart-add {
@@ -1815,31 +1910,58 @@ footer .copyright {
   /* Cart page item card adjustments for small screens */
   #cart-table tbody tr {
     grid-template-columns: 65px 1fr auto;
+    grid-template-areas:
+      "img product product"
+      "img price price"
+      "img qty subtotal"
+      "remove remove remove";
     gap: 6px 10px;
     padding: 10px;
   }
 
+  #cart-table td.cart-col-image,
   #cart-table td:nth-child(2) {
     width: 65px;
   }
 
+  #cart-table td.cart-col-image img,
   #cart-table img {
     width: 65px;
     height: 65px;
   }
 
+  #cart-table td.cart-col-product strong,
   #cart-table td:nth-child(3) strong {
     font-size: 13px;
   }
 
-  #cart-table td:nth-child(5) input {
-    width: 50px;
-    height: 32px;
-    font-size: 15px;
+  #cart-table td.cart-col-price,
+  #cart-table td:nth-child(4) {
+    font-size: 13px;
   }
 
+  #cart-table td.cart-col-quantity input,
+  #cart-table td:nth-child(5) input {
+    width: 48px;
+    height: 32px;
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+
+  #cart-table td.cart-col-subtotal,
   #cart-table td:nth-child(6) {
     font-size: 14px;
+  }
+
+  #cart-table td.cart-col-remove,
+  #cart-table td:nth-child(1) {
+    padding-top: 6px;
+    margin-top: 2px;
+  }
+
+  #cart-table td a.remove-btn {
+    padding: 5px 12px;
+    font-size: 12px;
   }
 
   #coupon > div {

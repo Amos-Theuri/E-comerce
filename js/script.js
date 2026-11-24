@@ -382,21 +382,22 @@ function initCartPage() {
         const imgSrc = getDisplayAssetPath(item.image);
         return `
           <tr>
-            <td>
-              <a href="#" class="remove-btn" data-id="${item.id}" title="Remove item">
-                <i class="ri-close-circle-fill"></i>
+            <td class="cart-col-remove">
+              <a href="#" class="remove-btn" data-id="${item.id}" title="Remove item" aria-label="Remove ${item.name}">
+                <i class="ri-delete-bin-line"></i>
+                <span class="remove-text">Remove</span>
               </a>
             </td>
-            <td><img src="${imgSrc}" alt="${item.name}" /></td>
-            <td>
+            <td class="cart-col-image"><img src="${imgSrc}" alt="${item.name}" /></td>
+            <td class="cart-col-product">
               <strong>${item.name}</strong>
-              ${item.size && item.size !== "Standard" ? `<br><small style="color:var(--text-muted)">Size: ${item.size}</small>` : ""}
+              ${item.size && item.size !== "Standard" ? `<small class="cart-item-size">Size: ${item.size}</small>` : ""}
             </td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td>
-              <input type="number" min="1" max="99" inputmode="numeric" value="${item.quantity}" data-id="${item.id}" class="cart-qty-input" />
+            <td class="cart-col-price" data-label="Price">$${item.price.toFixed(2)}</td>
+            <td class="cart-col-quantity" data-label="Quantity">
+              <input type="number" min="1" max="99" inputmode="numeric" value="${item.quantity}" data-id="${item.id}" class="cart-qty-input" aria-label="Quantity for ${item.name}" />
             </td>
-            <td><strong>$${itemSubtotal.toFixed(2)}</strong></td>
+            <td class="cart-col-subtotal" data-label="Subtotal"><strong>$${itemSubtotal.toFixed(2)}</strong></td>
           </tr>
         `;
       })
