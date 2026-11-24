@@ -125,10 +125,6 @@ button.white {
   transition: 0.2s;
 }
 
-.star-fill {
-  fill: #fcef3b;
-}
-
 /*header at start*/
 #header {
   display: flex;
@@ -630,6 +626,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-top: 1px solid var(--border-color);
 }
 
 footer .col {
@@ -641,23 +638,6 @@ footer .col {
 
 footer .logo {
   margin-bottom: 30px;
-}
-
-footer h4 {
-  font-size: 14px;
-  padding-bottom: 20px;
-}
-
-footer p {
-  font-size: 13px;
-  margin: 0 0 8px 0;
-}
-
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-color);
 }
 
 footer h4 {
@@ -699,26 +679,19 @@ footer .follow i:hover {
   color: var(--accent);
 }
 
-footer .copyright {
-  width: 100%;
-  text-align: center;
-  color: var(--text-light);
-  font-size: 11px;
-}
-
 footer .install .row img {
   border: 1px solid #088178;
   border-radius: 6px;
 }
 
 footer .install img {
-  margin: 0 10 0 15;
+  margin: 10px 0 15px 0;
 }
 
 footer .copyright {
   width: 100%;
   text-align: center;
-  color: #465b52;
+  color: var(--text-muted);
   font-size: 11px;
 }
 

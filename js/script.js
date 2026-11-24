@@ -320,6 +320,15 @@ function initProductCards() {
 }
 
 function initSingleProductPage() {
+  // Thumbnail gallery click handler
+  const mainImg = document.getElementById("mainimg") || document.querySelector(".single-pro-img img");
+  const smallImgs = document.querySelectorAll(".small-img");
+  smallImgs.forEach((img) => {
+    img.addEventListener("click", () => {
+      if (mainImg) mainImg.src = img.src;
+    });
+  });
+
   const addBtn = document.getElementById("sp-add-btn") || document.querySelector(".sinle-pro-details button.normal");
   if (!addBtn) return;
 
@@ -330,7 +339,6 @@ function initSingleProductPage() {
     const priceEl = document.getElementById("sp-price") || document.querySelector(".sinle-pro-details h2");
     const sizeEl = document.getElementById("sp-size") || document.querySelector(".sinle-pro-details select");
     const qtyEl = document.getElementById("sp-qty") || document.querySelector(".sinle-pro-details input[type='number']");
-    const mainImg = document.getElementById("mainimg") || document.querySelector(".single-pro-img img");
 
     const name = nameEl ? nameEl.textContent.trim() : "Store Product";
     const price = parsePrice(priceEl ? priceEl.textContent.trim() : "350");
@@ -534,10 +542,4 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp);
 } else {
   initApp();
-}
-
-// Star Rating Toggle
-function myFunction1() {
-  const element = document.body;
-  element.classList.toggle("star-fill");
 }
