@@ -1516,11 +1516,12 @@ footer .copyright {
 
   #cart-table tbody tr {
     display: grid;
-    grid-template-columns: 75px 1fr auto;
+    grid-template-columns: 75px 1fr;
     grid-template-areas:
-      "img product product"
-      "img price price"
-      "img qty remove";
+      "img product"
+      "img price"
+      "img qty"
+      "img remove";
     gap: 8px 12px;
     align-items: center;
     background-color: var(--bg-surface);
@@ -1637,8 +1638,9 @@ footer .copyright {
   #cart-table td:nth-child(1) {
     grid-area: remove;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: auto;
+    margin-top: 4px;
   }
 
   #cart-table td.cart-col-remove .remove-text,
@@ -1881,11 +1883,12 @@ footer .copyright {
 
   /* Cart page item card adjustments for small screens */
   #cart-table tbody tr {
-    grid-template-columns: 65px 1fr auto;
+    grid-template-columns: 65px 1fr;
     grid-template-areas:
-      "img product product"
-      "img price price"
-      "img qty remove";
+      "img product"
+      "img price"
+      "img qty"
+      "img remove";
     gap: 6px 10px;
     padding: 10px;
   }
