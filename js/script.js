@@ -378,7 +378,6 @@ function initCartPage() {
 
     cartItems.innerHTML = cart
       .map((item) => {
-        const itemSubtotal = (item.price || 0) * (item.quantity || 1);
         const imgSrc = getDisplayAssetPath(item.image);
         return `
           <tr>
@@ -397,7 +396,6 @@ function initCartPage() {
             <td class="cart-col-quantity" data-label="Quantity">
               <input type="number" min="1" max="99" inputmode="numeric" value="${item.quantity}" data-id="${item.id}" class="cart-qty-input" aria-label="Quantity for ${item.name}" />
             </td>
-            <td class="cart-col-subtotal" data-label="Subtotal"><strong>$${itemSubtotal.toFixed(2)}</strong></td>
           </tr>
         `;
       })

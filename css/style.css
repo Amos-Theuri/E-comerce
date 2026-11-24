@@ -1065,8 +1065,7 @@ footer .copyright {
   text-align: center;
 }
 #cart table td:nth-child(4),
-#cart table td:nth-child(5),
-#cart table td:nth-child(6) {
+#cart table td:nth-child(5) {
   width: 150px;
   text-align: center;
 }
@@ -1521,8 +1520,7 @@ footer .copyright {
     grid-template-areas:
       "img product product"
       "img price price"
-      "img qty subtotal"
-      "remove remove remove";
+      "img qty remove";
     gap: 8px 12px;
     align-items: center;
     background-color: var(--bg-surface);
@@ -1635,38 +1633,12 @@ footer .copyright {
     text-align: center;
   }
 
-  #cart-table td.cart-col-subtotal,
-  #cart-table td:nth-child(6) {
-    grid-area: subtotal;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: right;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--accent);
-    width: auto;
-  }
-
-  #cart-table td.cart-col-subtotal::before,
-  #cart-table td:nth-child(6)::before {
-    content: "Subtotal: ";
-    display: inline;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-muted);
-    margin-right: 4px;
-  }
-
   #cart-table td.cart-col-remove,
   #cart-table td:nth-child(1) {
     grid-area: remove;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
-    border-top: 1px solid var(--border-color);
-    padding-top: 8px;
-    margin-top: 4px;
+    width: auto;
   }
 
   #cart-table td.cart-col-remove .remove-text,
@@ -1913,8 +1885,7 @@ footer .copyright {
     grid-template-areas:
       "img product product"
       "img price price"
-      "img qty subtotal"
-      "remove remove remove";
+      "img qty remove";
     gap: 6px 10px;
     padding: 10px;
   }
@@ -1948,15 +1919,9 @@ footer .copyright {
     padding: 2px 4px;
   }
 
-  #cart-table td.cart-col-subtotal,
-  #cart-table td:nth-child(6) {
-    font-size: 14px;
-  }
-
   #cart-table td.cart-col-remove,
   #cart-table td:nth-child(1) {
-    padding-top: 6px;
-    margin-top: 2px;
+    width: auto;
   }
 
   #cart-table td a.remove-btn {
